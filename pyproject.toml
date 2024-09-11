@@ -10,7 +10,7 @@ authors = [{ name = "Piyush Khurana", email = "pka420@proton.me" }]
 readme = "README.md"
 license = { text = "MIT" }
 requires-python = ">=3.6"
-dependencies = ["django"]
+dependencies = ["django", "djangorestframework"]
 classifiers = [
   "Development Status :: 3 - Alpha",
 
