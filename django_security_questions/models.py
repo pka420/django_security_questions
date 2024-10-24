@@ -64,9 +64,9 @@ class SecurityAnswer(models.Model):
         if not bool(getattr(settings, "QUESTIONS_CASE_SENSITIVE", False)):
             raw_answer = raw_answer.upper()
 
-        def setter(raw_answer):
-            self.set_answer(raw_answer)
-            self.save(update_fields=["answer"])
+    def setter(raw_answer):
+        self.set_answer(raw_answer)
+        self.save(update_fields=["answer"])
         return hashers.check_password(raw_answer, self.answer, setter)
 
     def set_unusable_answer(self):
