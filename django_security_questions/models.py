@@ -24,10 +24,10 @@ class SecurityAnswer(models.Model):
 
     class Meta:
         db_table = "security_answer"
-		unique_together = ('user', 'question')
+        unique_together = ('user', 'question')
 
     def __str__(self):
-		return f"{self.user} - {self.question}"
+        return f"{self.user} - {self.question}"
 
     def hash_current_answer(self):
         self.set_answer(self.answer)
