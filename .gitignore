@@ -44,3 +44,4 @@ docs/_build
 ## virtualenv
 env
 venv
+*.db
