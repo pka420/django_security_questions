@@ -2,13 +2,14 @@ from django.contrib.auth import hashers
 from django.conf import settings
 from django.db import models
 from django.utils.translation import gettext_lazy as _
+from django_bleach.models import BleachField
 
 from .compat import user_model_label
 
 
 class SecurityQuestion(models.Model):
     id = models.AutoField(primary_key=True)
-    question = models.CharField(max_length=150, null=False, blank=False)
+    question = BleachField(max_length=150, null=False, blank=False)
 
     class Meta:
         db_table = "security_questions"
@@ -20,7 +21,7 @@ class SecurityQuestion(models.Model):
 class SecurityAnswer(models.Model):
     user = models.ForeignKey(user_model_label, on_delete=models.CASCADE, related_name='user_security_answers', default=1)
     question = models.ForeignKey("SecurityQuestion", verbose_name=_("Security Question"), on_delete=models.CASCADE)
-    answer = models.CharField(max_length=100, null=False, blank=False)
+    answer = BleachField(max_length=100, null=False, blank=False)
 
     class Meta:
         db_table = "security_answer"
