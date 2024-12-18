@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "django_security_questions"
-version = "0.1.5"
+version = "0.1.6"
 description = "Security Questions for your django app"
 authors = [{ name = "Piyush Khurana", email = "pka420@proton.me" }]
 readme = "README.md"
