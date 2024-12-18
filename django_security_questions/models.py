@@ -45,7 +45,7 @@ class SecurityAnswer(models.Model):
             raw_answer = raw_answer.upper()
 
         def setter(raw_answer):
-            if not hashers.check_password(raw_answer, self.answer)
+            if not hashers.check_password(raw_answer, self.answer):
                 self.set_answer(raw_answer)
                 self.save(update_fields=["answer"])
 
